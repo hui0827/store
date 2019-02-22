@@ -17,6 +17,7 @@ public class BaseServlet extends HttpServlet {
         //1.获取方法名
         String methodName = request.getParameter("method");
         // 当没用指定要调用的方法时，那么默认请求的是execute()方法。
+        System.out.println(methodName);
         if (methodName == null || methodName.isEmpty()) {
             methodName = "execute";
         }
@@ -26,7 +27,7 @@ public class BaseServlet extends HttpServlet {
             // 反射方法目标方法，也就是说，如果methodName为add，那么就调用add方法。
             String path = (String) method.invoke(this, request, response);
             // 通过返回值完成请求转发
-            if (path != null || !path.isEmpty()){
+            if (path != null){
                 request.getRequestDispatcher(path).forward(request,response);
             }
         } catch (Exception e) {

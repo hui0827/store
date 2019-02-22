@@ -69,7 +69,7 @@
 			//遍历json列表,获取每一个分类,包装成li标签,插入到ul内部
 			//$.each($(obj),function(){});
 			$(obj).each(function(){
-				//alert(this.cname);
+				// alert(this.cname);
 				$("#c_ul").append("<li><a href='${pageContext.request.contextPath}/product?method=findByPage&pageNumber=1&cid="+this.cid+"'>"+this.cname+"</a></li>");
 			});
 		},"json");

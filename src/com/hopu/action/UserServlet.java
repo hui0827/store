@@ -72,7 +72,7 @@ public class UserServlet extends BaseServlet {
                 return "/jsp/msg.jsp";
             }
             request.getSession().setAttribute("user",user.getUsername());
-            response.sendRedirect(request.getContextPath()+"/jsp/index.jsp");
+            response.sendRedirect(request.getContextPath());
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("msg","用户登录失败");

@@ -9,4 +9,25 @@ public interface Constant {
      *  用户已激活
      */
     int USER_IS_ACTIVE = 1;
+
+    /**
+     *  商品热门
+     */
+    int PRODUCT_IS_HOT = 1;
+
+    /**
+     *  商品未下架
+     */
+    int PRODUCT_IS_NOT_DOWN = 0;
+
+    /**
+     * 商品下架
+     */
+    int PRODUCT_IS_DOWN = 1;
+
+    /**
+     * 查询最新和热门的数量
+     */
+    int PRODUCT_NUM = 9;
+
 }
