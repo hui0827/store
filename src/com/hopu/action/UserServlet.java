@@ -71,7 +71,7 @@ public class UserServlet extends BaseServlet {
                 request.setAttribute("msg","账户未激活，请激活后登录");
                 return "/jsp/msg.jsp";
             }
-            request.getSession().setAttribute("user",user.getUsername());
+            request.getSession().setAttribute("user",user);
             response.sendRedirect(request.getContextPath());
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,6 +79,16 @@ public class UserServlet extends BaseServlet {
             return "/jsp/msg.jsp";
         }
         return null;
+    }
+
+    public String loginUI(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        return "/jsp/login.jsp";
+    }
+
+    public String registUI(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        return "/jsp/register.jsp";
     }
 
 }

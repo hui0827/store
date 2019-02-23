@@ -30,4 +30,24 @@ public interface Constant {
      */
     int PRODUCT_NUM = 9;
 
+    /**
+     * 订单状态：未付款
+     */
+    int ORDER_WEIFUKUAN = 0;
+
+    /**
+     * 订单状态：已付款
+     */
+    int ORDER_YIFUKUAN = 1;
+
+    /**
+     * 订单状态：已发货
+     */
+    int ORDER_YIFAHUO = 2;
+
+    /**
+     * 订单状态：已完成
+     */
+    int ORDER_YIWANCHENG = 3;
+
 }

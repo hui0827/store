@@ -17,9 +17,8 @@ public class BaseServlet extends HttpServlet {
         //1.获取方法名
         String methodName = request.getParameter("method");
         // 当没用指定要调用的方法时，那么默认请求的是execute()方法。
-        System.out.println(methodName);
         if (methodName == null || methodName.isEmpty()) {
-            methodName = "execute";
+            methodName = "index";
         }
         try {
             // 通过方法名称获取方法的反射对象
@@ -37,7 +36,7 @@ public class BaseServlet extends HttpServlet {
         }
     }
 
-    public String execute (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String index (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
         response.getWriter().println("不要捣乱哦！");
         return null;

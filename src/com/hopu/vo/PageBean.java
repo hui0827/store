@@ -54,6 +54,15 @@ public class PageBean<T> {
 		this.pageNumber = pageNumber;
 		this.pageSize = pageSize;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "PageBean{" +
+				"data=" + data +
+				", pageNumber=" + pageNumber +
+				", totalRecord=" + totalRecord +
+				", pageSize=" + pageSize +
+				", totalPage=" + totalPage +
+				'}';
+	}
 }
