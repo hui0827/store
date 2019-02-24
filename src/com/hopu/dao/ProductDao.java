@@ -15,4 +15,6 @@ public interface ProductDao {
     List<Product> findByPage(PageBean<Product> pb, String cid) throws Exception;
 
     int getTotalRecord(String cid) throws Exception;
+
+    List<Product> findAll() throws Exception;
 }

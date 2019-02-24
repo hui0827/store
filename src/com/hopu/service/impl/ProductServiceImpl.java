@@ -38,4 +38,10 @@ public class ProductServiceImpl implements ProductService {
         pb.setTotalRecord(total);
         return pb;
     }
+
+    @Override
+    public List<Product> findAll() throws Exception {
+        ProductDao pd = new ProductDaoImpl();
+        return pd.findAll();
+    }
 }

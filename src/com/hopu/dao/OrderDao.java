@@ -14,4 +14,8 @@ public interface OrderDao {
     int getTotalRecord(String uid) throws Exception;
 
     List<Order> findMyOrderByPage(PageBean<Order> pb, String uid) throws Exception;
+
+    Order getById(String oid) throws Exception;
+
+    void update(Order order) throws Exception;
 }

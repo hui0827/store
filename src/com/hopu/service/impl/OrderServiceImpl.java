@@ -29,6 +29,7 @@ public class OrderServiceImpl implements OrderService {
             conn.close();
         } catch (Exception e) {
             conn.rollback();
+            conn.close();
             e.printStackTrace();
         }
     }
@@ -42,5 +43,17 @@ public class OrderServiceImpl implements OrderService {
         List<Order> data = od.findMyOrderByPage(pb, uid);
         pb.setData(data);
         return pb;
+    }
+
+    @Override
+    public Order getById(String oid) throws Exception {
+        OrderDao od = new OrderDaoImpl();
+        return od.getById(oid);
+    }
+
+    @Override
+    public void update(Order order) throws Exception {
+        OrderDao od = new OrderDaoImpl();
+        od.update(order);
     }
 }

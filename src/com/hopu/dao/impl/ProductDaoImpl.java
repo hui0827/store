@@ -47,4 +47,11 @@ public class ProductDaoImpl implements ProductDao {
         String sql = "select count(*) from product where cid = ? and pflag = ?";
         return ((Long)qr.query(sql, new ScalarHandler<>(), cid, Constant.PRODUCT_IS_NOT_DOWN)).intValue();
     }
+
+    @Override
+    public List<Product> findAll() throws Exception {
+        QueryRunner qr = new QueryRunner(new ComboPooledDataSource());
+        String sql = "select * from product where pflag = ? order by pdate desc";
+        return qr.query(sql, new BeanListHandler<>(Product.class), Constant.PRODUCT_IS_NOT_DOWN);
+    }
 }

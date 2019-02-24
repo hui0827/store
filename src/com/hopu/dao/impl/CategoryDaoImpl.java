@@ -15,4 +15,11 @@ public class CategoryDaoImpl implements CategoryDao {
         String sql = "select * from category";
         return qr.query(sql, new BeanListHandler<>(Category.class));
     }
+
+    @Override
+    public void save(Category category) throws Exception {
+        QueryRunner qr = new QueryRunner(new ComboPooledDataSource());
+        String sql = "insert into category values(?,?)";
+        qr.update(sql,category.getCid(),category.getCname());
+    }
 }

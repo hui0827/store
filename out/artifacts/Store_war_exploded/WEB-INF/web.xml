@@ -4,6 +4,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <filter>
+        <filter-name>PrivilegeFilter</filter-name>
+        <filter-class>com.hopu.action.filter.PrivilegeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PrivilegeFilter</filter-name>
+        <url-pattern>/jsp/cart.jsp</url-pattern>
+        <url-pattern>/jsp/order_list.jsp</url-pattern>
+        <url-pattern>/jsp/order_info.jsp</url-pattern>
+    </filter-mapping>
+    <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>com.hopu.action.filter.EncodingFilter</filter-class>
     </filter>
